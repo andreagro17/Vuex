@@ -29,9 +29,16 @@ import { mapGetters } from 'vuex'
 //    }
 // ----------------------------
 export default{ 
-  computed: mapGetters([
+  computed: {
+      // '...' means: pull out all the prop and methods in the object you have here
+      // and create separate key value pairs for each of them
+      // need to intstall npm install --save-dev babel-preset-stage-2 (for the 3 dots we are using)
+      // go to .babelrc and add ["stage-2"]
+      ...mapGetters([
       'doubleCounter',
       'stringCounter'
-  ])
+    ]),
+    // we could add ourOwn method
+  }
 }
 </script>
