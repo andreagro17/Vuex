@@ -7,28 +7,14 @@
 
 <script>
     import {mapActions} from 'vuex'
+    import * as types from '../store/types'
+    
     export default {
         methods: {
-            ...mapActions([
-                'increment',
-                'decrement'
-            ]),
-            increment(by) {
-                this.$store.dispatch('increment', by)
-            },
-            decrement(by) {
-                this.$store.dispatch('decrement', by)
-            }
-            //increment() {
-                // this.$emit('updated', 1)
-                //this.$store.state.counter++
-                //this.$store.commit('increment')
-            //},
-            //decrement() {
-                // this.$emit('updated', -1)
-                //this.$store.state.counter--
-                //this.$store.commit('decrement')
-            }
+            ...mapActions({
+                increment: types.COUNTER_INCREMENT,
+                decrement: types.COUNTER_DECREMENT
+            })
         }
-    
+    }   
 </script>
